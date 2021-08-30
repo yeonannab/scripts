@@ -9,7 +9,7 @@ IMAGE=./stretch.img
 
 set -eux
 
-$QEMU -smp 2 -m 256 \
+$QEMU -smp 2 -m 2G \
 	-kernel $KERNEL \
 	-hda $IMAGE \
 	-net nic -net user,hostfwd=tcp::10022-:22 \
