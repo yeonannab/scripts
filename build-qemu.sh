@@ -26,7 +26,7 @@ pushd $BUILD_DIR
 
 set -eux
 
-$QEMU_SRC_DIR/configure --prefix=$INSTALL_DIR --target-list=x86_64-softmmu
+$QEMU_SRC_DIR/configure --prefix=$INSTALL_DIR --target-list=x86_64-softmmu --disable-werror
 make -j4
 make install
 

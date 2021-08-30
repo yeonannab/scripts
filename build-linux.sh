@@ -39,8 +39,11 @@ pushd $KERNEL_SRC_DIR
 
 set -eux
 
+export CC=gcc-8
+export CXX=g++-8
+
 make csi2115_f21_defconfig O=$IMAGE_OUT_DIR/$config
-make -j4 O=$IMAGE_OUT_DIR/$config bzImage
+make -j4 O=$IMAGE_OUT_DIR/$config CC=$CC bzImage
 
 if [ $INSTALL_MOD_PATH != "" ]; then
 	pushd $IMAGE_OUT_DIR/$config
