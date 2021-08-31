@@ -10,4 +10,5 @@ sudo apt install debootstrap
 sudo apt install python
 sudo apt install ninja-build
 sudo apt install automake
+sudo apt install cmake
 sudo dpkg -i dwarves_1.17-1_amd64.deb
