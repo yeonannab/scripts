@@ -7,6 +7,10 @@ QEMU=./build/qemu/install/bin/qemu-system-x86_64
 KERNEL=./build/linux/csi2115_f21/arch/x86_64/boot/bzImage
 IMAGE=./stretch.img
 
+if [ $# -ge 1 ]; then
+	QEMU=$1
+fi
+
 set -eux
 
 ENABLE_KVM=""
