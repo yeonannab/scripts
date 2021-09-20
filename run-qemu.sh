@@ -9,7 +9,12 @@ IMAGE=./stretch.img
 
 set -eux
 
-$QEMU -smp 2 -m 4G \
+ENABLE_KVM=""
+if output=$(kvm-ok); then
+	ENABLE_KVM=-enable-kvm
+fi
+
+$QEMU -smp 2 -m 4G $ENABLE_KVM \
 	-kernel $KERNEL \
 	-hda $IMAGE \
 	-net nic -net user,hostfwd=tcp::10022-:22 \

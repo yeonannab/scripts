@@ -12,4 +12,5 @@ sudo apt install ninja-build
 sudo apt install automake
 sudo apt install cmake
 sudo apt install libglib2.0-dev libpixman-1-dev
+sudo apt install cpu-checker
 sudo dpkg -i dwarves_1.17-1_amd64.deb
