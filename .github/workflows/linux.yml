@@ -1,0 +1,22 @@
+
+name: OPP - hw2
+
+on:
+  push:
+    paths:
+      - 'linux'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install
+        run: ./install-deps.sh
+      - name: Download
+        run: wget https://github.com/yeonannab/linux/archive/$(git rev-parse HEAD:linux).zip
+      - name: Unzip
+        run: unzip $(git rev-parse HEAD:linux).zip
+      - name: Build
+        run: ./build-linux.sh linux-$(git rev-parse HEAD:linux) tinyconfig
