@@ -1,0 +1,15 @@
+
+name: OPP - hw2 - test.yml
+
+on:
+  push:
+    paths:
+      - 'test/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: test
+        run: make -C test
